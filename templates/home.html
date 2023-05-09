@@ -2,26 +2,25 @@
 <html>
   <head>
     <link rel="stylesheet" href="static/style.css">
-  <style>
-    .error{
-        display:none;
-    }
-  </style>
   </head>
   <body>
     <form action="/convert" method="POST">
       Converting from <input type="text" name="from_currency">
+      {% if message1 %}
+      <span class="error">{{ message1 }}</span>
+      {% endif %}
       <br><br>
       Converting to <input type="text" name="to_currency">
+      {% if message2 %}
+      <span class="error">{{ message2 }}</span>
+      {% endif %}
       <br><br>
       Amount: <input type="text" name="amount">
+      {% if message3 %}
+      <span class="error">{{ message3 }}</span>
+      {% endif %}
       <br><br>
       <button class="btn1">Convert</button>
-    </form>
-    <form action="/">
-        <div id="error1" class="error">{{ message1 }}</div>
-        <div id="error2" class="error">{{ message2 }}</div>
-        <div id="error3" class="error">{{ message3 }}</div>
     </form>
   </body>
 </html>
