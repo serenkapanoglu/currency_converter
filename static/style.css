@@ -1,17 +1,16 @@
-.error{
-    width: 400px;
-    height: 60px;
-    border-radius: 5px;
-    display: flex;
-     align-items: center;
-    padding-left: 20px;
-    background-color: rgb(255, 68, 0);
-    color: white;
-    font-size: 16px;
-    font-weight: 500;
-    font-family: sans-serif;
-    
-
+.error {
+  width: 400px;
+  height: 60px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  padding-left: 20px;
+  background-color: rgb(255, 68, 0);
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: sans-serif;
 }
 
 .btn2{
