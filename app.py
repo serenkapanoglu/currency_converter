@@ -15,15 +15,14 @@ def convert():
     
     valid_currencies_response = requests.get('https://api.exchangerate.host/symbols')
     valid_currencies = valid_currencies_response.json()['symbols']
-    if from_currency not in valid_currencies:
-        return render_template("error.html" ,message = f"Not a valid code:{from_currency}")
-    if  to_currency not in  valid_currencies:
-        return render_template("error.html", message=f"Not a valid code:{to_currency}")
+    if from_currency not in valid_currencies and to_currency not in  valid_currencies:
+        return render_template("home.html" ,message1 = f"Not a valid code:{from_currency}",message2 = f"Not a valid code:{to_currency}")
+    
     
     try:
         float(amount)
     except ValueError:
-        return render_template("error.html", message="Not a valid amount.")
+        return render_template("home.html", message3="Not a valid amount.")
     
     
     response = requests.get(f'https://api.exchangerate.host/convert?from={from_currency}&to={to_currency}&amount={amount}')
